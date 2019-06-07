@@ -44,8 +44,47 @@
                     <input type="radio" name="imageselected" value="7" />
                 </div>
             </div>
+
             <div class="memeSelector memeText">
                 <input type="text" size="50" name="memeText"  placeholder="Skriv din meme text"/>
+                <h4>text position</h4>
+                <div class="text-positions">
+                    <div class="text-positions-endPoints">
+                        <div>
+                            <input type="radio" name="textPosition" value="top-left" id="rTopLeft" />
+                            <label for="rTopLeft">Top-Left</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="textPosition" value="top-center" id="rTopCenter" />
+                            <label for="rTopCenter">Top-Center</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="textPosition" value="top-right" id="rTopRight" />
+                            <label for="rTopRight">Top-Right</label>
+                        </div>
+                    </div>
+                    <div class="text-positions-endPoints">
+                        <div>
+                            <input type="radio" name="textPosition" value="centered" id="rCentered" />
+                            <label for="rCentered">Centered</label>
+                        </div>
+                    </div>
+                    <div class="text-positions-endPoints">
+                        <div>
+                            <input type="radio" name="textPosition" value="bottom-left" id="rBottomLeft" />
+                            <label for="rBottomLeft">Bottom-Left</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="textPosition" value="bottom-center" id="rBottomCenter" />
+                            <label for="rBottomCenter">Bottom-Center</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="textPosition" value=bottom-right" id="rBottomRight" />
+                            <label for="rBottomRight">Bottom-Right</label>
+                        </div>
+                    </div>
+                </div>
+                <br />
                 <input type="submit" value="Generer meme" />
             </div>
         </form>
@@ -55,7 +94,7 @@
 {
     <div class="generatedMeme">
         <img src="@Model.SelectedImageUrl" />
-        <div class="bottom-center">
+        <div class="@Model.TextPosition">
             @Model.MemeText
         </div>
     </div>

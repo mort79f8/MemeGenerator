@@ -13,6 +13,8 @@ namespace S2.AspNet.Repetition.Pages
         public int ImageSelected { get; set; }
         [BindProperty(SupportsGet = true)]
         public string MemeText { get; set; } = "";
+        [BindProperty(SupportsGet = true)]
+        public string TextPosition { get; set; }
         public string SelectedImageUrl { get; set; }
         public void OnGet()
         {

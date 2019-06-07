@@ -109,11 +109,34 @@ section .wrapper {
             margin-top:10px;
         }
 
-section .generatedMeme {
-    position: relative;
-    text-align: center;
-    color: white;
-}
+        section .wrapper article h4 {
+            color: white;
+        }
+        section .wrapper article .text-positions {
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        section .wrapper article .text-positions .text-positions-endPoints {
+            display:flex;
+            justify-content:center;
+        }
+            section .wrapper article .text-positions .text-positions-endPoints label {
+                margin: 5px 5px;
+            }
+
+        section .generatedMeme {
+            position: relative;
+            text-align: center;
+            color: white;
+            width:400px;
+            margin: 0 auto;
+        }
+
+        section .generatedMeme img {
+            width: 100%;
+        }
 
     /* Bottom left text */
     section .generatedMeme .bottom-left {
