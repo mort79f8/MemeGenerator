@@ -1,0 +1,22 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.NewMemeModel
+@{
+    ViewData["Title"] = "NewMeme";
+}
+
+
+<div class="newMemeWrapper">
+    <br />
+    @if (Model.MemeText != "")
+    {
+        <div class="generatedMeme">
+            <img src="@Model.SelectedImageUrl" />
+            <div class="@Model.TextPosition">
+                @Model.MemeText
+            </div>
+        </div>
+    }
+
+        <a href="/Index" class="center">Tilbage til memegeneratoren</a>
+</div>
+

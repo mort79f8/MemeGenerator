@@ -78,8 +78,18 @@ section h1 {
 
 section .wrapper {
     display: flex;
+    width: 85%;
+    margin:0 auto;
+    align-content:center;
 }
 
+.newMemeWrapper {
+    text-align: center;
+}
+
+    .newMemeWrapper a {
+        color: white;
+    }
 
     section .wrapper article {
         padding: 2%;
@@ -137,6 +147,7 @@ section .wrapper {
         section .generatedMeme img {
             width: 100%;
         }
+
 
     /* Bottom left text */
     section .generatedMeme .bottom-left {
