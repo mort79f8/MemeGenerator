@@ -90,6 +90,9 @@ section .wrapper {
     .newMemeWrapper a {
         color: white;
     }
+    .newMemeWrapper h2 {
+        color: white;
+    }
 
     section .wrapper article {
         padding: 2%;

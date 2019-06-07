@@ -1,7 +1,7 @@
 ﻿@page
 @model S2.AspNet.Repetition.Pages.NewMemeModel
 @{
-    ViewData["Title"] = "NewMeme";
+    ViewBag.Title = Model.MemeName;
 }
 
 
@@ -9,6 +9,7 @@
     <br />
     @if (Model.MemeText != "")
     {
+        <h2>@Model.MemeName</h2>
         <div class="generatedMeme">
             <img src="@Model.SelectedImageUrl" />
             <div class="@Model.TextPosition">
@@ -17,6 +18,6 @@
         </div>
     }
 
-        <a href="/Index" class="center">Tilbage til memegeneratoren</a>
+    <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
 
