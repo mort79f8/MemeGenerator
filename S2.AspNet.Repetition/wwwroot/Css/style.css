@@ -83,6 +83,7 @@ section .wrapper {
     align-content:center;
 }
 
+
 .newMemeWrapper {
     text-align: center;
 }
@@ -94,9 +95,9 @@ section .wrapper {
         color: white;
     }
 
-    section .wrapper article {
-        padding: 2%;
-    }
+section .wrapper article {
+    padding: 2%;
+}
 
         section .wrapper article .memeWrapper {
             display: flex;
@@ -108,6 +109,9 @@ section .wrapper {
             padding: 5px;
         }
 
+            section .wrapper article .memeSelector p{
+                text-align: center;
+            }
             section .wrapper article .memeSelector img {
                 width: 200px;
             }
@@ -139,13 +143,26 @@ section .wrapper {
                 margin: 5px 5px;
             }
 
-        section .generatedMeme {
-            position: relative;
-            text-align: center;
+        section .wrapper article .text-size {
             color: white;
-            width:400px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
             margin: 0 auto;
         }
+            section .wrapper article .text-size label {
+                margin: 5px 5px;
+            }
+
+
+
+            section .generatedMeme {
+                position: relative;
+                text-align: center;
+                color: white;
+                width: 400px;
+                margin: 0 auto;
+            }
 
         section .generatedMeme img {
             width: 100%;
@@ -200,6 +217,18 @@ section .wrapper {
         bottom: 8px;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .text-size-small {
+        font-size: 1rem;
+    }
+
+    .text-size-medium {
+        font-size: 1.5rem;
+    }
+
+    .text-size-large {
+        font-size: 2rem;
     }
 
 @media screen and (max-width: 900px) {

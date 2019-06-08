@@ -10,7 +10,7 @@
     @if (Model.MemeText != "")
     {
         <h2>@Model.MemeName</h2>
-        <div class="generatedMeme">
+        <div class="generatedMeme @Model.TextSize">
             <img src="@Model.SelectedImageUrl" />
             <div class="@Model.TextPosition">
                 @Model.MemeText
