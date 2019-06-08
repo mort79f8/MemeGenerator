@@ -10,14 +10,13 @@
     @if (Model.MemeText != "")
     {
         <h2>@Model.MemeName</h2>
-        <div class="generatedMeme @Model.TextSize">
+        <div class="generatedMeme @Model.TextSize ">
             <img src="@Model.SelectedImageUrl" />
-            <div class="@Model.TextPosition">
+            <div class="@Model.TextPosition @Model.TextColor">
                 @Model.MemeText
             </div>
         </div>
     }
-
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
 

@@ -20,6 +20,8 @@ namespace S2.AspNet.Repetition.Pages
         public string MemeName { get; set; }
         [BindProperty(SupportsGet = true)]
         public string TextSize { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string TextColor { get; set; }
         public string SelectedImageUrl { get; set; }
         public void OnGet()
         {

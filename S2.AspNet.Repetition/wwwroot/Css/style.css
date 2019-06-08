@@ -154,6 +154,17 @@ section .wrapper article {
                 margin: 5px 5px;
             }
 
+        section .wrapper article .text-color {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            margin: 0 auto;
+        }
+
+            section .wrapper article .text-color label {
+                margin: 5px 5px;
+            }
 
 
             section .generatedMeme {
@@ -229,6 +240,18 @@ section .wrapper article {
 
     .text-size-large {
         font-size: 2rem;
+    }
+
+    .text-color-white {
+        color: white;
+    }
+
+    .text-color-black {
+        color: black;
+    }
+
+    .text-color-red {
+        color: red;
     }
 
 @media screen and (max-width: 900px) {
