@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Forside";
     Layout = "~/Pages/Shared/_Layout.cshtml";
+
+    int numberOfImages = 7;
 }
 
 <h1>Min første memegenerator</h1>
@@ -10,39 +12,15 @@
     <article>
         <form action="/NewMeme" method="get">
             <div class="memeWrapper">
-                <div class="memeSelector">
-                    <img src="~/Img/meme1.png" />
-                    <input type="radio" name="imageselected" value="1" checked />
-                </div>
-
-                <div class="memeSelector">
-                    <img src="~/Img/meme2.png" />
-                    <input type="radio" name="imageselected" value="2" />
-                </div>
-
-                <div class="memeSelector">
-                    <img src="~/Img/meme3.png" />
-                    <input type="radio" name="imageselected" value="3" />
-                </div>
-                <div class="memeSelector">
-                    <img src="~/Img/meme4.png" />
-                    <input type="radio" name="imageselected" value="4" />
-                </div>
-
-                <div class="memeSelector">
-                    <img src="~/Img/meme5.png" />
-                    <input type="radio" name="imageselected" value="5" />
-                </div>
-
-                <div class="memeSelector">
-                    <img src="~/Img/meme6.png" />
-                    <input type="radio" name="imageselected" value="6" />
-                </div>
-
-                <div class="memeSelector">
-                    <img src="~/Img/meme7.png" />
-                    <input type="radio" name="imageselected" value="7" />
-                </div>
+                @{
+                    for (int i = 1; i < numberOfImages; i++)
+                    {
+                        <div class="memeSelector">
+                            <img src=@Model.InsertImagesUrl(i) />
+                            <input type="radio" name="imageselected" value="@i" checked />
+                        </div>
+                    }
+                }
             </div>
 
             <div class="memeSelector memeText">
@@ -117,7 +95,7 @@
                                 <label for="rBottomCenter">Bottom-Center</label>
                             </div>
                             <div>
-                                <input type="radio" name="textPosition" value=bottom-right" id="rBottomRight" />
+                                <input type="radio" name="textPosition" value="bottom-right" id="rBottomRight" />
                                 <label for="rBottomRight">Bottom-Right</label>
                             </div>
                         </div>
