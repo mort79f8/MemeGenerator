@@ -1,0 +1,29 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.RandomeMemeModel
+@{
+    ViewData["Title"] = "RandomeMeme";
+}
+
+<div class="newMemeWrapper">
+    <br />
+    @if (Model.newMeme.MemeName != "")
+    {
+        <h2>@Model.newMeme.MemeName</h2>
+        <div class="generatedMeme @Model.newMeme.TextSize ">
+            <img src="@Model.newMeme.SelectedImageUrl" />
+            <div class="@Model.newMeme.TextPosition @Model.newMeme.TextColor">
+                @Model.newMeme.MemeText
+            </div>
+        </div>
+    }
+
+        <ul>
+            <li>@Model.newMeme.MemeName</li>
+            <li>@Model.newMeme.MemeText</li>
+            <li>@Model.newMeme.TextColor</li>
+            <li>@Model.newMeme.TextSize</li>
+            <li>@Model.newMeme.TextPosition</li>
+        </ul>
+    <a href="/Index" class="center">Tilbage til memegeneratoren</a>
+</div>
+
