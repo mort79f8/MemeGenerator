@@ -20,68 +20,68 @@
                     }
                 }
 
-            <div class="memeSelector memeText">
-                <input type="text" size="50" name="memeText" placeholder="Skriv din meme text" />
-                <input type="text" size="50" name="memeName" placeholder="Give din meme et navn" />
+                <div class="memeSelector memeText">
+                    <input type="text" size="50" name="memeText" placeholder="Skriv din meme text" />
+                    <input type="text" size="50" name="memeName" placeholder="Give din meme et navn" />
                 
-                <div>
-                    <p>text size for the meme</p><br />
-                </div>
-                <div class="text-size">
-                    @{
-                        for (int i = 0; i < 3; i++)
-                        {
-                            string id = "";
-                            switch (i)
+                    <div>
+                        <p>text size for the meme</p><br />
+                    </div>
+                    <div class="text-size">
+                        @{
+                            for (int i = 0; i < 3; i++)
                             {
-                                case 0:
-                                    id = "small";
-                                    break;
-                                case 1:
-                                    id = "medium";
-                                    break;
-                                case 2:
-                                    id = "large";
-                                    break;
-                                default:
-                                    break;
+                                string id = "";
+                                switch (i)
+                                {
+                                    case 0:
+                                        id = "small";
+                                        break;
+                                    case 1:
+                                        id = "medium";
+                                        break;
+                                    case 2:
+                                        id = "large";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                <div>
+                                    <input type="radio" name="TextSize" value="text-size-@id" id=@id />
+                                    <label for=@id>@id</label>
+                                </div>
                             }
-                            <div>
-                                <input type="radio" name="TextSize" value="text-size-@id" id=@id />
-                                <label for=@id>@id</label>
-                            </div>
                         }
-                    }
-                </div>
-                <div>
-                    <p>text color for the meme</p><br />
-                </div>
-                <div class="text-color">
-                    @{
-                        for (int i = 0; i < 3; i++)
-                        {
-                            string color = "";
-                            switch (i)
+                    </div>
+                    <div>
+                        <p>text color for the meme</p><br />
+                    </div>
+                    <div class="text-color">
+                        @{
+                            for (int i = 0; i < 3; i++)
                             {
-                                case 0:
-                                    color = "white";
-                                    break;
-                                case 1:
-                                    color = "black";
-                                    break;
-                                case 2:
-                                    color = "red";
-                                    break;
-                                default:
-                                    break;
+                                string color = "";
+                                switch (i)
+                                {
+                                    case 0:
+                                        color = "white";
+                                        break;
+                                    case 1:
+                                        color = "black";
+                                        break;
+                                    case 2:
+                                        color = "red";
+                                        break;
+                                    default:
+                                        break;
+                                }
+                                <div>
+                                    <input type="radio" name="TextColor" value="text-color-@color" id=@color />
+                                    <label for=@color>@color</label>
+                                </div>
                             }
-                            <div>
-                                <input type="radio" name="TextColor" value="text-color-@color" id=@color />
-                                <label for=@color>@color</label>
-                            </div>
                         }
-                    }
-                </div>
+                    </div>
                     
                     <h4>text position</h4>
                     <div class="text-positions">
@@ -146,6 +146,7 @@
                     </div>
                     <br />
                     <input type="submit" value="Generer meme" />
+                </div>
             </div>         
         </form>
     </article>
