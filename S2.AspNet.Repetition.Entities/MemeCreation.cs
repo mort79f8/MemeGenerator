@@ -4,7 +4,7 @@ using System.Text;
 
 namespace S2.AspNet.Repetition.Entities
 {
-    class MemeCreation
+    public class MemeCreation
     {
         private int id;
         private MemeImage memeImg;
