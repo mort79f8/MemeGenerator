@@ -11,10 +11,11 @@ namespace S2.AspNet.Repetition.Pages
     {
         public int NumberOfImages { get; set; }
 
-        public NewMemeModel newMeme = new NewMemeModel();
+        
+        public NewMemeModel newMeme { get; set; }       
         private Random rng = new Random();
-        List<string> MemeTextList = new List<string>()
 
+        List<string> MemeTextList = new List<string>()
         {
             "Like a Boss",
             "Hurra",
@@ -65,7 +66,7 @@ namespace S2.AspNet.Repetition.Pages
 
         public void GenerateRandomMeme()
         {
-            newMeme.SelectedImageUrl = $"/img/meme" + rng.Next(1, NumberOfImages + 1) + ".png";
+            newMeme.ImageSelected = $"/img/meme" + rng.Next(1, NumberOfImages + 1) + ".png";
             newMeme.MemeName = MemeNameList[rng.Next(0, MemeNameList.Count())];
             newMeme.MemeText = MemeTextList[rng.Next(0, MemeTextList.Count())];
             newMeme.TextSize = MemeSizeList[rng.Next(0, MemeSizeList.Count())];

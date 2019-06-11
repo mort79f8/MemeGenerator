@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 
@@ -16,6 +17,15 @@ namespace S2.AspNet.Repetition.DAL
             DataTable data = ExecuteQuery(sql);
 
             return HandleData(data);
+        }
+
+        public MemeImage GetMemeImage(string url)
+        {
+            string sql = $"SELECT * FROM MemeImages WHERE (Url=url)";
+
+            DataTable data = ExecuteQuery(sql);
+
+            return HandleData(data).FirstOrDefault();
         }
 
         private List<MemeImage> HandleData(DataTable dataTable)
