@@ -4,7 +4,7 @@ using System.Text;
 
 namespace S2.AspNet.Repetition.Entities
 {
-    class MemeImage
+    public class MemeImage
     {
         private int id;
         private string url;
