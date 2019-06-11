@@ -3,8 +3,6 @@
 @{
     ViewData["Title"] = "Forside";
     Layout = "~/Pages/Shared/_Layout.cshtml";
-
-    int numberOfImages = 7;
 }
 
 <h1>Min første memegenerator</h1>
@@ -13,13 +11,6 @@
         <form action="/NewMeme" method="get">
             <div class="memeWrapper">
                 @{
-                    @*for (int i = 1; i < numberOfImages+1; i++)
-                    {
-                        <div class="memeSelector">
-                            <img src=@Model.InsertImagesUrl(i) />
-                            <input type="radio" name="imageselected" value="@i"/>
-                        </div>
-                    }*@
                     foreach (MemeImage meme in Model.MemeImages)
                     {
                     <div class="memeSelector">
