@@ -7,7 +7,7 @@ using System.Text;
 
 namespace S2.AspNet.Repetition.DAL
 {
-    class MemeImageRepository : RepositoryBase
+    public class MemeImageRepository : RepositoryBase
     {
         public List<MemeImage> GetAll()
         {

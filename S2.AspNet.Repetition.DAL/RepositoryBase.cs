@@ -8,7 +8,7 @@ namespace S2.AspNet.Repetition.DAL
 {
     public class RepositoryBase
     {
-        private string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=MemeGenerator;Intergrated Security=True;";
+        private string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=MemeGenerator;Integrated Security=True;";
 
         /// <summary>
         /// Initializes a new instance of the CommonDataAccess class.
