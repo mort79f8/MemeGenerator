@@ -23,12 +23,16 @@
 
     @{
         Model.MostUsedImage();
-        }
+    }
 
     <h2>Most used image</h2>
     <div>
         <img src="@Model.MemeImg.Url" alt="@Model.MemeImg.AltText" />
     </div>
 
+    <h2>Most used Position</h2>
+    <div>
+        <p>@Model.MostUsedPosition()</p>
+    </div>
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>

@@ -31,5 +31,10 @@ namespace S2.AspNet.Repetition.Pages
         {
             MemeImg = memeImages.GetMostUsed();
         }
+
+        public string MostUsedPosition()
+        {
+            return memeImages.GetMostUsedPosition();
+        }
     }
 }

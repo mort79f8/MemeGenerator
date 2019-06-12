@@ -64,5 +64,22 @@ namespace S2.AspNet.Repetition.DAL
             }
             return memeImages.FirstOrDefault();
         }
+
+        public string GetMostUsedPosition()
+        {
+            string sql = "SELECT TOP(1) Position, COUNT(*) FROM MemeCreations GROUP BY Position ORDER BY COUNT(*) DESC";
+
+            DataTable data = ExecuteQuery(sql);
+
+            List<string> positions = new List<string>();
+
+            foreach (DataRow row in data.Rows)
+            {
+                string position = (string)row["Position"];
+                positions.Add(position);
+            }
+            return positions.FirstOrDefault();
+        }
+        
     }
 }
