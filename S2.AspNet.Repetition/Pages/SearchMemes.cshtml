@@ -20,14 +20,17 @@
             {
 
                 <br />
-                <div class="generatedMeme @meme.Size ">
-                    <img src="@meme.MemeImg.Url" />
-                    <div class="@meme.Position @meme.Color">
-                        @meme.MemeText
-                    </div>
-                </div>
+                <partial name="_Meme" model="@meme" />
+                @*<div class="generatedMeme @meme.Size ">
+                        <img src="@meme.MemeImg.Url" />
+                        <div class="@meme.Position @meme.Color">
+                            @meme.MemeText
+                        </div>
+                    </div>*@
 
             }
         }
     }
+    <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
+

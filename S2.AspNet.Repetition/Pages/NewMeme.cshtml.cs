@@ -29,6 +29,8 @@ namespace S2.AspNet.Repetition.Pages
         public string TextSize { get; set; }
         [BindProperty(SupportsGet = true)]
         public string TextColor { get; set; }
+        public MemeCreation MemeCreation { get => memeCreation; set => memeCreation = value; }
+
         public void OnGet()
         {
             memeImage = memeImageRepository.GetMemeImage(ImageSelected);

@@ -6,12 +6,13 @@
 
 <div class="newMemeWrapper">
     <br />
-        <div class="generatedMeme @Model.MemeCreated.Size ">
+    <partial name="_Meme" model="@Model.MemeCreated" />
+        @*<div class="generatedMeme @Model.MemeCreated.Size ">
             <img src="@Model.MemeImg.Url" />
             <div class="@Model.MemeCreated.Position @Model.MemeCreated.Color">
                 @Model.MemeCreated.MemeText
             </div>
-        </div>
+        </div>*@
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
 

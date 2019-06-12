@@ -14,12 +14,13 @@
 
 
     <h2>Latest meme created</h2>
-    <div class="generatedMeme @Model.MemeCreation.Size ">
+    <partial name="_Meme" model="@Model.MemeCreation" />
+    @*<div class="generatedMeme @Model.MemeCreation.Size ">
         <img src="@Model.MemeImg.Url" alt="@Model.MemeImg.AltText" />
         <div class="@Model.MemeCreation.Position @Model.MemeCreation.Color">
             @Model.MemeCreation.MemeText
         </div>
-    </div>
+    </div>*@
 
     @{
         Model.MostUsedImage();
