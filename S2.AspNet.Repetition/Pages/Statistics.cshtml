@@ -11,16 +11,24 @@
     @{
         Model.GetLatestMeme();
     }
-    
+
 
     <h2>Latest meme created</h2>
     <div class="generatedMeme @Model.MemeCreation.Size ">
-        <img src="@Model.MemeImg.Url" />
+        <img src="@Model.MemeImg.Url" alt="@Model.MemeImg.AltText" />
         <div class="@Model.MemeCreation.Position @Model.MemeCreation.Color">
             @Model.MemeCreation.MemeText
         </div>
     </div>
 
+    @{
+        Model.MostUsedImage();
+        }
+
+    <h2>Most used image</h2>
+    <div>
+        <img src="@Model.MemeImg.Url" alt="@Model.MemeImg.AltText" />
+    </div>
 
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>

@@ -55,7 +55,14 @@ namespace S2.AspNet.Repetition.DAL
 
             DataTable data = ExecuteQuery(sql);
 
-            return HandleData(data).FirstOrDefault();
+            List<MemeImage> memeImages = new List<MemeImage>();
+
+            foreach (DataRow row in data.Rows)
+            {
+                MemeImage memeImage = new MemeImage((int)row["MemeImg"], (string)row["Url"], (string)row["AltText"]);
+                memeImages.Add(memeImage);
+            }
+            return memeImages.FirstOrDefault();
         }
     }
 }
