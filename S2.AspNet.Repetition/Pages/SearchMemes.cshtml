@@ -1,0 +1,33 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.SearchMemesModel
+@{
+    ViewData["Title"] = "SearchMemes";
+}
+
+<h1>SearchMemes</h1>
+
+<div class="search">
+    <form method="get">
+        <input type="text" name="SearchTerm" value="" />
+        <input type="submit" value="Search memes" />
+    </form>
+</div>
+<div class="newMemeWrapper">
+    @{
+        if (Model.MemeCreations != null)
+        {
+            foreach (var meme in Model.MemeCreations)
+            {
+
+                <br />
+                <div class="generatedMeme @meme.Size ">
+                    <img src="@meme.MemeImg.Url" />
+                    <div class="@meme.Position @meme.Color">
+                        @meme.MemeText
+                    </div>
+                </div>
+
+            }
+        }
+    }
+</div>

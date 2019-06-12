@@ -63,5 +63,14 @@ namespace S2.AspNet.Repetition.DAL
 
             return HandleData(data).FirstOrDefault();
         }
+
+        public List<MemeCreation> SearchMemeText(string searchTerm)
+        {
+            string sql = $"SELECT * FROM MemeCreations WHERE MemeText LIKE '%{searchTerm}%'";
+
+            DataTable data = ExecuteQuery(sql);
+
+            return HandleData(data);
+        }
     }
 }
