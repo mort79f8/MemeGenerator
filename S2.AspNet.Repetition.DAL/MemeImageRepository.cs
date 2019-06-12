@@ -80,6 +80,22 @@ namespace S2.AspNet.Repetition.DAL
             }
             return positions.FirstOrDefault();
         }
-        
+
+        public string GetMostUsedColor()
+        {
+            string sql = "SELECT TOP(1) Color, COUNT(*) FROM MemeCreations GROUP BY Color ORDER BY COUNT(*) DESC";
+
+            DataTable data = ExecuteQuery(sql);
+
+            List<string> colors = new List<string>();
+
+            foreach (DataRow row in data.Rows)
+            {
+                string color = (string)row["Color"];
+                colors.Add(color);
+            }
+            return colors.FirstOrDefault();
+        }
+
     }
 }
