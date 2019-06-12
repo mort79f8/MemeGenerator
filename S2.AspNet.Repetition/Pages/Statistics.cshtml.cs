@@ -12,6 +12,7 @@ namespace S2.AspNet.Repetition.Pages
     public class StatisticsModel : PageModel
     {
         private MemeCreationRepository memeCreations = new MemeCreationRepository();
+        private MemeImageRepository memeImages = new MemeImageRepository();
         public MemeCreation MemeCreation { get; set; }
         public MemeImage MemeImg { get; set; }
 
@@ -24,6 +25,11 @@ namespace S2.AspNet.Repetition.Pages
         {
             MemeCreation = memeCreations.GetLatestMeme();
             MemeImg = MemeCreation.MemeImg;
+        }
+
+        public void MostUsedImage()
+        {
+            MemeImg = memeImages.GetMostUsed();
         }
     }
 }

@@ -8,11 +8,19 @@
 
 <div class="newMemeWrapper">
     <br />
-        <div class="generatedMeme @Model.MemeCreation.Size ">
-            <img src="@Model.MemeImg.Url" />
-            <div class="@Model.MemeCreation.Position @Model.MemeCreation.Color">
-                @Model.MemeCreation.MemeText
-            </div>
+    @{
+        Model.GetLatestMeme();
+    }
+    
+
+    <h2>Latest meme created</h2>
+    <div class="generatedMeme @Model.MemeCreation.Size ">
+        <img src="@Model.MemeImg.Url" />
+        <div class="@Model.MemeCreation.Position @Model.MemeCreation.Color">
+            @Model.MemeCreation.MemeText
         </div>
+    </div>
+
+
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
