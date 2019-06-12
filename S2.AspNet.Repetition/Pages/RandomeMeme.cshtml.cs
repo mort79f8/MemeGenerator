@@ -4,74 +4,43 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using S2.AspNet.Repetition.DAL;
+using S2.AspNet.Repetition.Entities;
 
 namespace S2.AspNet.Repetition.Pages
 {
     public class RandomeMemeModel : PageModel
     {
-        public int NumberOfImages { get; set; }
+        private MemeCreationRepository memeCreationRepository = new MemeCreationRepository();
 
-        
-        public NewMemeModel newMeme { get; set; }       
-        private Random rng = new Random();
+        public MemeImage MemeImg { get; set; }
+        public MemeCreation MemeCreated { get; set; }
 
-        List<string> MemeTextList = new List<string>()
-        {
-            "Like a Boss",
-            "Hurra",
-            "Random is random!",
-            "Drink while young",
-            "Memes are weird",
-            "i am your weifu?",
-            "DUH"
-        };
 
-        List<string> MemeColorList = new List<string>()
-        {
-            "text-color-white",
-            "text-color-black",
-            "text-color-red"
-        };
+        //private int id;
+        //private MemeImage memeImg;
+        //private DateTime timeStamp;
+        //private string memeText;
+        //private string position;
+        //private string color;
+        //private string size;
 
-        List<string> MemeSizeList = new List<string>()
-        {
-            "text-size-small",
-            "text-size-medium",
-            "text-size-large"
-        };
+        //public int Id { get => id; set => id = value; }
+        //public MemeImage MemeImg { get => memeImg; set => memeImg = value; }
+        //public DateTime TimeStamp { get => timeStamp; set => timeStamp = value; }
+        //public string MemeText { get => memeText; set => memeText = value; }
+        //public string Position { get => position; set => position = value; }
+        //public string Color { get => color; set => color = value; }
+        //public string Size { get => size; set => size = value; }
 
-        List<String> MemeTextPosition = new List<string>()
-        {
-            "top-left",
-            "top-center",
-            "top-right",
-            "centered",
-            "bottom-left",
-            "bottom-center",
-            "bottom-right"
-        };
-
-        List<string> MemeNameList = new List<string>()
-        {
-            "Random meme 1",
-            "Random meme 2",
-            "Random meme 3",
-            "Random meme 4"
-        };
         public void OnGet()
         {
-            NumberOfImages = 7;
-            GenerateRandomMeme();
+            GenerateMeme();
         }
-
-        public void GenerateRandomMeme()
+        public void GenerateMeme()
         {
-            newMeme.ImageSelected = $"/img/meme" + rng.Next(1, NumberOfImages + 1) + ".png";
-            newMeme.MemeName = MemeNameList[rng.Next(0, MemeNameList.Count())];
-            newMeme.MemeText = MemeTextList[rng.Next(0, MemeTextList.Count())];
-            newMeme.TextSize = MemeSizeList[rng.Next(0, MemeSizeList.Count())];
-            newMeme.TextPosition = MemeTextPosition[rng.Next(0, MemeTextPosition.Count())];
-            newMeme.TextColor = MemeColorList[rng.Next(0, MemeColorList.Count())];
+            MemeCreated = memeCreationRepository.GetRandomMeme();
+            MemeImg = MemeCreated.MemeImg;
         }
     }
 }

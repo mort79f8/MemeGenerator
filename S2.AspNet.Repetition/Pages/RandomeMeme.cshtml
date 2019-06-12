@@ -6,24 +6,12 @@
 
 <div class="newMemeWrapper">
     <br />
-    @if (Model.newMeme.MemeName != "")
-    {
-        <h2>@Model.newMeme.MemeName</h2>
-        <div class="generatedMeme @Model.newMeme.TextSize ">
-            <img src="@Model.newMeme.ImageSelected" />
-            <div class="@Model.newMeme.TextPosition @Model.newMeme.TextColor">
-                @Model.newMeme.MemeText
+        <div class="generatedMeme @Model.MemeCreated.Size ">
+            <img src="@Model.MemeImg.Url" />
+            <div class="@Model.MemeCreated.Position @Model.MemeCreated.Color">
+                @Model.MemeCreated.MemeText
             </div>
         </div>
-    }
-
-        <ul>
-            <li>@Model.newMeme.MemeName</li>
-            <li>@Model.newMeme.MemeText</li>
-            <li>@Model.newMeme.TextColor</li>
-            <li>@Model.newMeme.TextSize</li>
-            <li>@Model.newMeme.TextPosition</li>
-        </ul>
     <a href="/Index" class="center">Tilbage til memegeneratoren</a>
 </div>
 

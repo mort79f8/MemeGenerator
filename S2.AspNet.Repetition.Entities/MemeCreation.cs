@@ -22,6 +22,7 @@ namespace S2.AspNet.Repetition.Entities
         {
             Id = id;
             MemeText = memeText;
+            MemeImg = memeImg;
             TimeStamp = timeStamp;
             MemeText = memeText;
             Position = position;

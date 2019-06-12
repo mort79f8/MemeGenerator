@@ -21,7 +21,16 @@ namespace S2.AspNet.Repetition.DAL
 
         public MemeImage GetMemeImage(string url)
         {
-            string sql = $"SELECT * FROM MemeImages WHERE (Url=url)";
+            string sql = $"SELECT * FROM MemeImages WHERE (Url='{url}')";
+
+            DataTable data = ExecuteQuery(sql);
+
+            return HandleData(data).FirstOrDefault();
+        }
+
+        public MemeImage GetMemeImage(int memeId)
+        {
+            string sql = $"SELECT * FROM MemeImages WHERE (Id={memeId})";
 
             DataTable data = ExecuteQuery(sql);
 
