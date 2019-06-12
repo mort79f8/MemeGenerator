@@ -9,21 +9,21 @@ using S2.AspNet.Repetition.Entities;
 
 namespace S2.AspNet.Repetition.Pages
 {
-    public class RandomeMemeModel : PageModel
+    public class StatisticsModel : PageModel
     {
-        private MemeCreationRepository memeCreationRepository = new MemeCreationRepository();
-
+        private MemeCreationRepository memeCreations = new MemeCreationRepository();
+        public MemeCreation MemeCreation { get; set; }
         public MemeImage MemeImg { get; set; }
-        public MemeCreation MemeCreated { get; set; }
 
         public void OnGet()
         {
-            GenerateMeme();
+            GetLatestMeme();
         }
-        public void GenerateMeme()
+
+        public void GetLatestMeme()
         {
-            MemeCreated = memeCreationRepository.GetRandomMeme();
-            MemeImg = MemeCreated.MemeImg;
+            MemeCreation = memeCreations.GetLatestMeme();
+            MemeImg = MemeCreation.MemeImg;
         }
     }
 }

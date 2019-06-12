@@ -1,0 +1,18 @@
+﻿@page
+@model S2.AspNet.Repetition.Pages.StatisticsModel
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<h1>Statistics</h1>
+
+<div class="newMemeWrapper">
+    <br />
+        <div class="generatedMeme @Model.MemeCreation.Size ">
+            <img src="@Model.MemeImg.Url" />
+            <div class="@Model.MemeCreation.Position @Model.MemeCreation.Color">
+                @Model.MemeCreation.MemeText
+            </div>
+        </div>
+    <a href="/Index" class="center">Tilbage til memegeneratoren</a>
+</div>

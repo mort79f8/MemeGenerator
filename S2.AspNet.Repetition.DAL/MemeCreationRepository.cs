@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using S2.AspNet.Repetition.DAL;
+using System.Linq;
 
 namespace S2.AspNet.Repetition.DAL
 {
@@ -53,5 +54,13 @@ namespace S2.AspNet.Repetition.DAL
             return memeList[rngNum.Next(1, memeList.Count)];
         }
 
+        public MemeCreation GetLatestMeme()
+        {
+            string sql = "SELECT TOP(1) * FROM MemeCreations Order By TimeStamp DESC";
+
+            DataTable data = ExecuteQuery(sql);
+
+            return HandleData(data).FirstOrDefault();
+        }
     }
 }
